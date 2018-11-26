@@ -49,11 +49,11 @@ spring:
 
 目录结构如下：
 
-![TIM截图20180824150109](C:\Users\Administrator\Desktop\innerpeacez\images\TIM截图20180824150109.png)
+![TIM截图20180824150109](F:\innerpeacez_github\my-code-history\images\TIM截图20180824150109.png)
 
 或者
 
-![1535094943495](C:\Users\Administrator\Desktop\innerpeacez\images\1535094943495.png)
+![1535094943495](F:\innerpeacez_github\my-code-history\images\1535094943495.png)
 
 在这三个文件均都设置不同的server.port属性，如：dev环境设置为8080，test环境设置为8081，prod环境设置为8082
 

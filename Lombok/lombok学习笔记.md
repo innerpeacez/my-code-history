@@ -14,7 +14,7 @@ lombok想必已经有很多人已经使用了很长时间了，而我却是第�
 
 我这里已经安装好了，没有安装的时候按钮应该是Install
 
-![1535440701638](C:\Users\Administrator\Desktop\innerpeacez\images\1535440701638.png)
+![1535440701638](F:\innerpeacez_github\my-code-history\images\1535440701638.png)
 
 #### 2、pom文件引入project lombok的maven依赖
 
@@ -595,11 +595,11 @@ public static void main(String[] args) throws Exception {
 
 编译后的代码（等效Java代码）
 
-![1535458582493](C:\Users\Administrator\Desktop\innerpeacez\images\1535458582493.png)
+![1535458582493](F:\innerpeacez_github\my-code-history\images\1535458582493.png)
 
 具体可以指定哪些字段，需要流对象支持哪些方法了。如InputStream：
 
-![1535458699771](C:\Users\Administrator\Desktop\innerpeacez\images\1535458699771.png)
+![1535458699771](F:\innerpeacez_github\my-code-history\images\1535458699771.png)
 
 #### @Synchronized
 
