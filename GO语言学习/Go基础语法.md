@@ -113,7 +113,7 @@ complex64 complex128
 
 ### 基本类型零值（默认值）
 
-![1542629367057](F:\innerpeacez\images\1542629367057.png)
+![1542629367057](F:\innerpeacez_github\my-code-history\images\1542629367057.png)
 
 
 

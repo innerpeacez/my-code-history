@@ -34,7 +34,7 @@ git push
 
 直接在github页面进行操作
 
-![1537431868188](F:\innerpeacez\images\%5CUsers%5CAdministrator%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1537431868188.png)
+![1537431868188](F:\innerpeacez_github\my-code-history\images\%5CUsers%5CAdministrator%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1537431868188.png)
 
 
 
@@ -52,7 +52,7 @@ https://github.com/xxx/xxx/compare/innerpeacez:master...master
 
 ### 创建PR到自己的仓库
 
-![1537432096202](F:\innerpeacez\images\%5CUsers%5CAdministrator%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1537432096202.png)
+![1537432096202](F:\innerpeacez_github\my-code-history\images\%5CUsers%5CAdministrator%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1537432096202.png)
 
 ![1537432074291](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\1537432074291.png)
 
