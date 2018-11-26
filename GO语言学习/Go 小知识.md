@@ -1,12 +1,12 @@
 ### 目录结构
 
-D:/project/src/                  源代码
+```go
+/src/              go语言源代码
 
-​	    	/bin/                  编译后的可执行文件
+/bin/              编译后的可执行文件
 
-​	    	/vender/            引入第三方的工具
-
-​            	/pkg/                  静态库
+/pkg/              静态库,编译好的包对象文件
+```
 
 export GOPATH=D:/project/
 
