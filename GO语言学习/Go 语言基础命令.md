@@ -10,3 +10,9 @@ go version
 go env
 ```
 
+运行go程序
+
+```go
+go run hello.go
+```
+
