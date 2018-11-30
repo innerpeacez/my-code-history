@@ -59,7 +59,7 @@ import "math"
 | int32  | int64   | iota    | len     | make   | new     | nil       | panic      | uint64  |
 | print  | println | real    | recover | string | true    | uint      | uint8      | uintptr |
 
-## 函数：
+## 函数
 
 - 分开写参数类型：
 
@@ -615,3 +615,114 @@ func main() {
 
 ### append()和copy()方法
 
+```
+var numbers []int
+
+/* 允许追加空切片 */
+numbers = append(numbers, 0)
+
+/* 向切片添加一个元素 */
+numbers = append(numbers, 1)
+
+/* 同时添加多个元素 */
+numbers = append(numbers, 2,3,4)
+
+/* 创建切片 numbers1 是之前切片的两倍容量*/
+numbers1 := make([]int, len(numbers), (cap(numbers))*2)
+
+/* 拷贝 numbers 的内容到 numbers1 */
+copy(numbers1,numbers)
+```
+
+## Range
+
+Go 语言中 range 关键字用于 for 循环中迭代数组(array)、切片(slice)、通道(channel)或集合(map)的元素。在数组和切片中它返回元素的索引和索引对应的值，在集合中返回 key-value 对的 key 值。
+
+```go
+func main() {
+
+   nums := []int{1, 2, 3, 4, 5}
+
+   for index, value := range nums {
+      fmt.Printf("index: %v ,value: %v\n", index, value)
+   }
+}
+```
+
+## Map
+
+Map 是一种无序的键值对的集合。Map 最重要的一点是通过 key 来快速检索数据，key 类似于索引，指向数据的值。
+
+### 定义map
+
+```go
+// 定义map
+var map1 = map[string]string{}
+
+// 使用make方法定义
+map2 := make(map[int]string)
+```
+
+### 添加元素
+
+```go
+map1 [ "decp" ] = "this is map1"
+```
+
+### 删除元素
+
+```go
+delete(map1, "decp")
+```
+
+### 例子
+
+```go
+import "fmt"
+
+func main() {
+   // 定义map
+   var map1 = map[string]string{}
+
+   // 使用make方法定义
+   map2 := make(map[int]string)
+
+   // 赋值
+   map1 [ "decp" ] = "this is map1"
+   map2 [1] = "this is map2"
+
+   // 检查key是否存在
+   decp, ok := map1 [ "decp" ]
+   if ok {
+      fmt.Printf("decp:%s\n", decp)
+   }
+
+   // 使用delete方法删除map中的元素
+   delete(map1, "decp")
+
+   decp2, ok := map1 [ "decp" ]
+   if ok {
+      fmt.Printf("decp:%s\n", decp2)
+   } else {
+      fmt.Println("key不存在")
+   }
+}
+```
+
+## 接口
+
+Go 语言提供了另外一种数据类型即接口，它把所有的具有共性的方法定义在一起，任何其他类型只要实现了这些方法就是实现了这个接口。
+
+```go
+type Print interface {
+   printName(name string)
+}
+
+func printName(name string) {
+	fmt.Printf("name : %s", name)
+}
+
+func main() {
+	printName("innerpeacez")
+}
+```
