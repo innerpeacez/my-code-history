@@ -726,3 +726,54 @@ func main() {
 	printName("innerpeacez")
 }
 ```
+
+## 方法
+
+简单的可以理解为针对结构体定义的`func`，方法中也可以使用指针，不使用指针是其实操作的是结构体的副本，元信息不会改变
+
+### 操作基本类型结构体
+
+```go
+type Age int32
+
+func (age Age) initAge() int32 {
+   if age == 0 {
+      age = 10
+      return int32(age)
+   }
+   return int32(age)
+}
+
+func main() {
+   age := Age(0)
+   initAge := age.initAge()
+   fmt.Println(initAge)
+}
+```
+
+### 操作指针类型结构体
+
+```go
+type People struct {
+   Name string
+   Age  int32
+}
+
+func (people *People) printPeople() {
+   fmt.Printf("name: %s\n", people.Name)
+   fmt.Printf("age: %v\n", people.Age)
+}
+
+func (people *People) updatePeople() {
+   people.Age = 18
+   people.Name = "zhw"
+}
+
+func main() {
+   people := People{"innerpeacez", 14}
+   people.printPeople()
+   people.updatePeople()
+   people.printPeople()
+}
+```
+
