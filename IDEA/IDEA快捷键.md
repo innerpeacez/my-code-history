@@ -8,7 +8,7 @@
 | shift + tab      | 向前缩进             |
 | ctrl + r         | 字符串替换           |
 | ctrl + shift + r | 整个包下的字符串替换 |
-|                  |                      |
-|                  |                      |
+| ctrl + f         | 当前文件中查询       |
+| ctrl + shift + f | 全局搜索             |
 |                  |                      |
 
