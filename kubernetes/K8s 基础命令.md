@@ -1,4 +1,4 @@
-查询所有命名空间下的资源（rc,pod）  --all-namespaces
+ 查询所有命名空间下的资源（rc,pod）  --all-namespaces
 
 
 
