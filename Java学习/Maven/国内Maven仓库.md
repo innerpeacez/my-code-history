@@ -13,14 +13,15 @@
 
 ```xml
 <mirror>
-	<id>huaweicloud</id>
-	<mirrorOf>*</mirrorOf>		<url>https://mirrors.huaweicloud.com/repository/maven/</url>
+    <id>huaweicloud</id>
+    <mirrorOf>*</mirrorOf>		
+    <url>https://mirrors.huaweicloud.com/repository/maven/</url>
 </mirror>
 ```
 ```xml
 <server>
-	<id>huaweicloud</id>
-	<username>anonymous</username>
-	<password>devcloud</password>
+    <id>huaweicloud</id>
+    <username>anonymous</username>
+    <password>devcloud</password>
 </server>
 ```
