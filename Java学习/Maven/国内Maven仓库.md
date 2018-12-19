@@ -14,7 +14,8 @@
 ```xml
 <mirror>
   <id>huaweicloud</id>
-  <mirrorOf>*</mirrorOf>  <url>https://mirrors.huaweicloud.com/repository/maven/</url>
+  <url>https://mirrors.huaweicloud.com/repository/maven/</url>
+  <mirrorOf>*</mirrorOf>  
 </mirror>
 ```
 ```xml
