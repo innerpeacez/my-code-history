@@ -50,7 +50,8 @@ public static <T> List<T> filter(List<T> list, Predicate<T> p) {
 filter(Arrays.asList("innerpeacez",""),(String s) -> !s.isEmpty());
 ```
 
-流程图：
+lambda类型推断流程图：
 
 ![1545285372515](../../images/1545285372515.png)
 
+​	
