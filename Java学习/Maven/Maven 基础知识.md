@@ -219,7 +219,3 @@ repositories ：项目的仓库配置；
 build ：包括项目的源码目录配置、输出目录配置、插件配置、插件管理配置等；
 
 reporting ：包括项目的报告输出目录配置、报告插件配置等。
-
-------
-
-[参考地址](https://blog.csdn.net/u012152619/column/info/clfmaven)
