@@ -8,6 +8,11 @@
 - 将字符画复制到banner.txt文件中
 - 启动springboot项目就可看到效果了
 
+### banner属性设置：
+
+- ${AnsiColor.RED} ：设置控制台中输出内容的颜色
+- ${spring-boot.formatted-version} ：格式化后的Spring Boot版本信息
+
 ### 生成banner的网站
 
 - [生成文字banner](http://patorjk.com/software/taag/#p=display&f=JS%20Capital%20Curves&t=Type%20Something%20)
