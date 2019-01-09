@@ -268,3 +268,5 @@ public class EmployeeControllerTest {
 ## 总结
 
 本文简单的学习了一下 MockMvc 怎么使用，包含了主要的 CRUD 请求的方式，再也不用启动服务器来测试 http 请求啦。
+
+[GitHub源码地址](https://github.com/innerpeacez/spring-boot-learning/tree/master/spring-boot-mockmvc)
