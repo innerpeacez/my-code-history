@@ -95,3 +95,6 @@ CREATE TABLE IF NOT EXISTS `test`(
 alter table `test` add column `test_field` VARCHAR(100) NOT NULL;
 ```
 
+### 总结
+
+本文只是简单的说了怎么在 springboot 项目中使用 liquibase , 更多的 liquibase 姿势还得细细研究。
