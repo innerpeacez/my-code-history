@@ -47,17 +47,17 @@
 #### Chart.yaml中可以包含以下字段
 
 ```yaml
-apiVersion: The chart API version, always "v1" (required)
-name: The name of the chart (required)
-version: A SemVer 2 version (required)
-kubeVersion: A SemVer range of compatible Kubernetes versions (optional)
-description: A single-sentence description of this project (optional)
+apiVersion: The chart API version, always "v1" (必须参数)
+name: The name of the chart (必须参数)
+version: A SemVer 2 version (必须参数)
+kubeVersion: A SemVer range of compatible Kubernetes versions (可选参数)
+description: A single-sentence description of this project (可选参数)
 keywords:
-  - A list of keywords about this project (optional)
-home: The URL of this project's home page (optional)
+  - A list of keywords about this project (可选参数)
+home: The URL of this project's home page (可选参数)
 sources:
-  - A list of URLs to source code for this project (optional)
-maintainers: # (optional)
+  - A list of URLs to source code for this project (可选参数)
+maintainers: # (可选参数)
   - name: The maintainer's name (required for each maintainer)
     email: The maintainer's email (optional for each maintainer)
     url: A URL for the maintainer (optional for each maintainer)
