@@ -74,7 +74,7 @@ Pod从创建到销毁为其生命周期
 
 #### Pod的创建过程
 
-![img](../images/assets%2F-LDAOok5ngY4pc1lEDes%2F-LM_rqip-tinVoiFZE0I%2F-LM_sEq_NuMALezRGMtG%2Fworkflow.png)
+![img](../images/1550225162067.png)
 
 1. 用户通过Rest API (kubectl ,rancher API)提交Pod Spec给API Server
 2. API 将相关信息保存到etcd中，待写入操作完成后，API Server会返回确认消息给客户端
