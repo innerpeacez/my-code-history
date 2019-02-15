@@ -2,7 +2,7 @@
 
 SpringBoot2.0 之后使用 HikariCP 连接池更加方便了，因为 SB2.0 之后， HikariCP  连接池代替了 Tomcat 连接池已经成为了 SB2.0 的默认连接池。[Springboot 2.0选择HikariCP作为默认数据库连接池的五大理由](http://blog.didispace.com/Springboot-2-0-HikariCP-default-reason/) ，`springboot `默认依赖中集成了HikariCP,所以不用在引入Hikari的相关依赖了。下面开始正题。
 
-![1550022467827](..\images\1550022467827.png)
+![img](../images/20190213160506303.png)
 
 ## 环境
 
@@ -12,9 +12,13 @@ SpringBoot2.0 之后使用 HikariCP 连接池更加方便了，因为 SB2.0 之�
 
 ## 相关依赖
 
-因为spring boot 2.0使用hikariCP作为默认连接池，所以hikariCP的依赖已经默认集成了，我们不需要另外引入hikariCP相关的依赖，这里只是引入了Mysql的依赖
+因为spring boot 2.0使用hikariCP作为默认连接池，所以hikariCP的依赖已经默认集成了，hikariCP的依赖集成在了`spring-boot-starter-jdbc`和`spring-boot-starter-data-jpa`中，我们不需要另外引入hikariCP相关的依赖，这里只是引入了Mysql的依赖和JDBC依赖。
 
 ```xml
+<dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-jdbc</artifactId>
+</dependency>
 <dependency>
     <groupId>mysql</groupId>
     <artifactId>mysql-connector-java</artifactId>
