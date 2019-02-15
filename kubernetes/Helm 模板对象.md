@@ -9,15 +9,15 @@
 
 ### Release对象
 
-| 对象名            | 描述                                                 |
-| ----------------- | ---------------------------------------------------- |
-| Release.Name      | Release 名称                                         |
-| Release.Time      | Release 时间                                         |
-| Release.Namespace | Release 的 namespace                                 |
-| Release.Service   | Release 服务的名称（总是Tiller）                     |
-| Release.Revision  | Release 版本号，从 1 开始，每次 helm upgrade 时递增1 |
-| Release.IsUpgrade | 如果当前操作是升级或回滚，则设置为true。             |
-| Release.IsInstall | 如果当前操作是安装，则设置为true。                   |
+| 对象名              | 描述                                                 |
+| ------------------- | ---------------------------------------------------- |
+| `Release.Name`      | Release 名称                                         |
+| `Release.Time`      | Release 时间                                         |
+| `Release.Namespace` | Release 的 namespace                                 |
+| `Release.Service`   | Release 服务的名称（总是Tiller）                     |
+| `Release.Revision`  | Release 版本号，从 1 开始，每次 helm upgrade 时递增1 |
+| `Release.IsUpgrade` | 如果当前操作是升级或回滚，则设置为true。             |
+| `Release.IsInstall` | 如果当前操作是安装，则设置为true。                   |
 
 ### Values对象
 
