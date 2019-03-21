@@ -57,8 +57,6 @@ Java内存模型将JVM划分为两个部分：
 
 ### Java内存模型和计算机内存模型的交互
 
-![enter image description here](F:/innerpeacez_github/my-code-history/Java%E5%AD%A6%E4%B9%A0/images/java-memory-model-5.png)
-
 栈中数据可能保存在计算机的位置
 
 - cpu寄存器
@@ -71,19 +69,8 @@ Java内存模型将JVM划分为两个部分：
 - cpu缓冲区
 - 主内存
 
-也就是说JVM中的堆栈数据可能cpu寄存器，cpu缓冲区，主内存，而多个线程访问同一个数据时，无法保证可见性，而且Java中的代码如:
+JVM Thread Stack和Heap中的数据可能在Computer内存中出现的位置有CPU 寄存器，CPU缓冲区，主内存。多线程执行时，数据存在可见性，一致性，原子性等问题。
 
-```
-count+=1
-```
-
-可以分解为大致3条CPU指令
-
-- 读主内存的count数据
-- 将count加1
-- 将count的值写会主内存
-
-参考：
+### 参考：
 
 - http://ifeve.com/java-memory-model-6/
-- https://baike.baidu.com/item/java%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B/3399303
