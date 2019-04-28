@@ -69,7 +69,7 @@ rabbitmqctl list_queues | awk '{print $1}' > queues.txt
 将`queues.txt`导入到Ha的某个节点
 
 ```shell
-cat queues.txt | while read queue ; do （rabbitmqctl eval 'rabbit_amqqueue:declare({resource, <<"/">>, queue, <<"test-queue">>}, true, false, [], none, "节点地址").'）& done
+cat queues.txt | while read queue ; do （rabbitmqctl eval 'rabbit_amqqueue:declare({resource, <<"/">>, queue, <<"'$queue'">>}, true, false, [], none, "节点地址").'）& done
 ```
 
 **注意** ： 这里没有进行消息的同步，而是找了一个消息很少的时候，可能会丢消息，当然消息可以进行消息补偿来弄。
