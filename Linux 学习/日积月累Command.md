@@ -147,3 +147,12 @@ reboot 重启
 ```
 
 ![img](../images/8855bb645d8ecc35c80aa89cde5d16e5.jpg)
+
+
+
+#### 查看进程执行时的系统调用和所接受的信号
+
+```shell
+strace xxx
+```
+
