@@ -1,3 +1,9 @@
+<center>
+    <img style="border-radius: 0.5125em;
+    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);"
+    src="../images/8ddac59ce8c3a1e84abae501b7cab0b.jpg">
+</center>
+
 #### 判断 Pod 健康状态的两种方式
 
 - livenessProbe 存活性探针
@@ -26,6 +32,17 @@
 - Success：探测成功
 - Failure：探测失败，更具重启策略重启容器
 - Unknow：探测失败（未找到），不采取任何行动
+
+<center>
+    <img style="border-radius: 0.5125em;
+    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);"
+    src="../images/1558515419522.png">
+    <br>
+    <div style="color:orange; border-bottom: 1px solid #d9d9d9;
+    display: inline-block;
+    color: #999;
+    padding: 2px;">enjoy coding！</div>
+</center>
 
 ###### ExecAction
 
@@ -68,8 +85,6 @@ kubectl describe  pod liveness-exec
 一段时间后你可能会看到以下结果，显示目录不存在了。原因是`periodSeconds: 5`设置了 5s 后再次探测，但是目录已经被删除了，所以探测返回结果为：`Failure`。
 
 ![1558495130544](../images/1558495130544.png)
-
-
 
 ###### TCPSocketAction
 
