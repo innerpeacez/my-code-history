@@ -15,6 +15,8 @@
 yum install crontabs
 ```
 
+centos7 自带了我没有手动去装
+
 #### 启动/关闭
 
 ```shell
