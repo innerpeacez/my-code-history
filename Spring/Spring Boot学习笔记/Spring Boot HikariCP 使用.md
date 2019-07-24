@@ -60,6 +60,7 @@ spring:
     padding: 2px;">enjoy coding！</div>
 </center>
 
+
 ## 详细配置信息
 
 ### 必须配置
