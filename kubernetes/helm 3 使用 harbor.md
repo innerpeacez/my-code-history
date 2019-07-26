@@ -42,13 +42,14 @@
 1. 确保kubernetes环境可用
 2. 下载并初始化 helm 3
 3. 安装 harbor 1.6+
-4. 安装使用 helm-push 插件
+4. 添加 harbor 中的 chartrepo 到 helm 3 中
+5. 安装使用 helm-push 插件
 
-###### 确保kubernetes环境可用
+###### 1.确保kubernetes环境可用
 
 这里就不多说 kubernetes 环境的具体搭建过程了，搭建步骤随处可见。
 
-###### 下载并初始化 helm 3
+###### 2.下载并初始化 helm 3
 
 首先执行一下命令，下载并解压安装包
 
@@ -71,7 +72,7 @@ helm init
 
 默认添加官方 repo `stable	https://kubernetes-charts.storage.googleapis.com`
 
-###### 安装 harbor 1.6+
+###### 3.安装 harbor 1.6+
 
 这里我使用的是 harbor 官方提供的 `charts repo`,好奇心驱使我打开了这个网站 https://helm.goharbor.io/
 
@@ -87,13 +88,7 @@ helm repo add goharbor https://helm.goharbor.io
 
 这个 repo 只有一个charts harbor ，对应的 harbor 版本为1.8.1
 
-这里为了简化测试操作，我关闭了数据卷的挂载并使用的是NodePort方式进行访问。
-
-```shell
-helm -n test install harbor goharbor/harbor --set persistence.enabled=false --set expose.type=nodePort --set expose.tls.enabled=false
-```
-
-当然在执行之前我们需要配置一下kuber config context
+在安装之前我们需要配置一下 kube config context
 
 查看当前的context
 
@@ -107,11 +102,20 @@ kubectl config current-context
 kubectl config set-context <current-context> --namespace test
 ```
 
-这里为了简化测试操作，我关闭了数据卷的挂载并使用的是NodePort方式进行访问
+这里是因为，helm 3 开始helm 3 的执行权限和kubectl config 的权限是一致的，通过kubectl config的方式来控制helm 3 的执行权限。
+
+按时安装harbor ,这里为了简化测试操作，我关闭了数据卷的挂载并使用的是 NodePort 方式进行访问。
 
 ```shell
-helm -n test install harbor goharbor/harbor --set persistence.enabled=false --set expose.type=nodePort --set expose.tls.enabled=false
+helm -n test install harbor goharbor/harbor --set persistence.enabled=false --set expose.type=nodePort --set expose.tls.enabled=false --set externalURL=http://192.168.10.196:30002
 ```
+
+参数说明：
+
+- persistence.enabled=false 关闭存储，为了方便操作，真实使用时需要挂在存储
+- expose.type=nodePort 使用 NodePort 访问
+- expose.tls.enabled=false 关闭tls
+- externalURL=http://192.168.10.196:30002 设置登录 harbor 的外部链接
 
 出现以下返回，就证明已经开始安装了
 
@@ -127,3 +131,54 @@ Then you should be able to visit the Harbor portal at https://core.harbor.domain
 For more details, please visit https://github.com/goharbor/harbor.
 ```
 
+###### 4.添加 harbor 中的 chartrepo 到 helm 3 中
+
+harbor 装好之后，我们访问 http://192.168.10.196:30002 进行登录 harbor, harbor 的默认账号密码是 admin/Harbor12345
+
+![1564133342050](../images/1564133342050.png)
+
+新建一个chart repo
+
+![1564133389826](../images/1564133389826.png)
+
+创建一个 test 用户
+
+![1564134352276](../images/1564134352276.png)
+
+添加 repo 到 helm 中
+
+```shell
+helm repo add test http://192.168.10.76:30002/chartrepo/chart_repo
+```
+
+###### 5.安装使用 helm-push 插件
+
+```shell
+helm plugin install https://github.com/chartmuseum/helm-push
+```
+
+这里最好本地配置一下 github 的 dns 地址，不然可能会出现链接超时的现象
+
+安装好插件之后，就可以push charts 到 harbor 里面了
+
+```shell
+helm push grafana-0.0.2.tgz test --username test --password xxx
+```
+
+![1564135632193](../images/1564135632193.png)
+
+出现以上就说明 push 成功了 ，恭喜！！！
+
+#### 参考
+
+- https://github.com/chartmuseum/helm-push
+- https://github.com/goharbor/harbor
+- https://github.com/helm/helm
+
+------
+
+
+
+> - **Github**: https://github.com/innerpeacez
+> - **个人Blog**: https://ipzgo.top
+> - **日拱一卒，不期速成**
