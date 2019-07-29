@@ -16,7 +16,7 @@ helm 是 kubernetes 官方的包管理工具, 	通过 helm 将发布在 kubenete
 
 熟悉 kubernetes 的同学肯定非常熟悉 kubectl ,甚至于每天都会使用到。kubectl是用于针对Kubernetes集群运行命令的命令行接口。
 
-####　调教经历
+#### 调教经历
 
 简单的了解的 helm 和 kubectl 之后，我们开始实现在 windows 上执行 helm 命令。
 
