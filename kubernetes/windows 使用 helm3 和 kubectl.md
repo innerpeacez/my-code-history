@@ -66,7 +66,7 @@ repositories:
 
 ![1564213477567](../images/1564213477567.png)
 
- #### 通过 helm 部署应用到 kubernetes 中
+#### 通过 helm 部署应用到 kubernetes 中
 
 配置好 helm 和 kuberctl 之后，我们还需要给helm 设置 conext ，因为 helm 3，的访问 k8s 集群权限是与 我们在 kubeconfig 设置的权限是一致的
 
