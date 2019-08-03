@@ -50,7 +50,7 @@ ssh-keygen -t rsa
 
 **配置免密**
 
-在 test 01 执行以下命令，并键入每个节点的密码即可
+在 test01 执行以下命令，并键入每个节点的密码即可
 
 ```shell
 ssh-copy-id root@test01
