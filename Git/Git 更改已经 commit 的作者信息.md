@@ -62,3 +62,11 @@
    cd ..
    rm -rf repo.git
    ```
+
+8. 去原来的 clone 仓库拉去修改后的内容
+
+   ```shell
+   git pull --allow-unrelated-histories
+   ```
+
+   
