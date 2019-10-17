@@ -45,7 +45,7 @@ EOF
 cd ~
 mkdir rsa 
 cd rsa
-ssh-keygen -t rsa
+ssh-keygen -t rsa // 一直回车就好
 ```
 
 **配置免密**
