@@ -78,6 +78,8 @@ helm -n istio-system uninstall istio
 
 ```shell
 helm -n istio-system uninstall istio-init
+
+kubectl delete -f `kubectl get crd | grep istio| awk '{print $1}'`
 ```
 
 ### 总结
