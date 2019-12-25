@@ -1,1 +1,0 @@
-宿主机docker是使用rpm安装，有很多依赖(libltdl7*)。使用scratch docker空镜像，不需要依赖。
