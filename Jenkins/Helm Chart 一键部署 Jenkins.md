@@ -58,8 +58,8 @@ Jenkins 支持各种运行方式，可通过系统包、Docker 或者通过一�
 
    注意：namespace 为命名空间， storageClass 为存储类
 
-   只需这一条命令 jenkins 就已经部署完成了，并且chart 中默认安装了一些常用插件，比如 kubernetes ,并且生成了对应的配置，chart 真香：）
+   只需这一条命令 jenkins 就已经部署完成了，并且 chart 中默认安装了一些常用插件，比如 kubernetes 插件,并且生成了对应的配置，chart 真香：）
 
 #### 总结
 
-本文只是简单介绍了使用 chart 的部署过程，下一篇将会介绍 kubernetes 插件。
+本文只是简单介绍了使用 chart 的部署过程。
