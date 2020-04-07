@@ -62,8 +62,16 @@ insert into SC values('07' , '03' , 98);
    FROM
    	Student AS s, 
    	(SELECT t1.SId,t1.score as "01 分数",t2.score as "02 分数" 
-   	 FROM (SELECT SId ,score FROM SC sc where sc.CId='01') AS t1, 
-      			(SELECT SId ,score FROM SC sc where sc.CId='02') AS t2
+   	 FROM (
+        			SELECT SId ,score 
+        			FROM SC sc 
+        			WHERE sc.CId='01'
+      			) AS t1, 
+      			(
+             SELECT SId ,score 
+             FROM SC sc 
+             WHERE sc.CId='02'
+           ) AS t2
    	 WHERE t1.SId = t2.SId AND t1.score > t2.score ) AS sc2 
    WHERE s.SId = sc2.SId;
    ```
@@ -120,7 +128,25 @@ insert into SC values('07' , '03' , 98);
 
 4. 查询所有同学的学生编号、学生姓名、选课总数、所有课程的总成绩(没成绩的显示为 null )
 
+   ```mysql
+   SELECT stu.SId, stu.Sname, stu.Sage, stu.Ssex , t.Ccount, t.Csum
+   FROM Student stu
+   LEFT JOIN
+   	(
+   	 SELECT sc.SId ,COUNT(sc.CId) AS Ccount, SUM(sc.score) AS Csum 
+   	 FROM SC sc 
+   	 GROUP BY sc.SId
+   	) AS t
+   ON stu.SId = t.SId
+   ```
+
    4.1 查有成绩的学生信息
+
+   ```mysql
+   SELECT DISTINCT stu.SId, stu.Sname, stu.Sage, stu.Ssex 
+   FROM Student stu, SC sc
+   WHERE stu.SId = sc.SId
+   ```
 
 5. 查询「李」姓老师的数量
 
