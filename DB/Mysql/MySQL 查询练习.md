@@ -150,7 +150,22 @@ insert into SC values('07' , '03' , 98);
 
 5. 查询「李」姓老师的数量
 
+   ```mysql
+   SELECT COUNT( TId ) 
+   FROM Teacher 
+   WHERE Tname LIKE "李%"
+   ```
+
 6. 查询学过「张三」老师授课的同学的信息
+
+   ```mysql
+   SELECT DISTINCT t.TId,c.CId, s.*
+   FROM Teacher t, Course c, SC sc, Student s
+   WHERE t.Tname = "张三" 
+   AND t.TId = c.TId 
+   AND sc.CId = c.CId
+   AND s.SId = sc.SId
+   ```
 
 7. 查询没有学全所有课程的同学的信息
 
