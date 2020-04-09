@@ -184,6 +184,19 @@ insert into SC values('07' , '03' , 98);
 
 8. 查询至少有一门课与学号为" 01 "的同学所学相同的同学的信息
 
+   ```mysql
+   SELECT DISTINCT s.SId,s.Sname,s.Sage,s.Ssex
+   FROM SC sc,Student s
+   WHERE sc.SId != "01" 
+   AND sc.CId IN 
+   (
+   	SELECT sc.CId
+   	FROM SC sc 
+   	WHERE sc.SId = "01"
+   )
+   AND sc.SID = s.SId
+   ```
+
 9. 查询和" 01 "号的同学学习的课程 完全相同的其他同学的信息
 
 10. 查询没学过"张三"老师讲授的任一门课程的学生姓名
