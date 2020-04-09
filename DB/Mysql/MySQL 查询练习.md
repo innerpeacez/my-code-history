@@ -169,6 +169,19 @@ insert into SC values('07' , '03' , 98);
 
 7. 查询没有学全所有课程的同学的信息
 
+   ```mysql
+   SELECT * 
+   FROM Student s 
+   WHERE s.SId 
+   NOT IN 
+   (
+   	SELECT sc.SId 
+   	FROM SC sc , Student s 
+   	WHERE sc.SId = s.SId
+   	GROUP BY sc.SId
+   )
+   ```
+
 8. 查询至少有一门课与学号为" 01 "的同学所学相同的同学的信息
 
 9. 查询和" 01 "号的同学学习的课程 完全相同的其他同学的信息
