@@ -86,7 +86,7 @@ public static <T,U> T[] copyOf(U[] original, int newLength, Class<? extends T[]>
 }
 ```
 
-2. String 为不可变字符，直接进行字符串的拼接操作，耗时较长，所以 Java 中提供了两种可变字符用了完成字符串的拼接操作。
+2. String 为不可变字符，直接进行字符串的拼接操作，耗时较长，所以 Java 中提供了两种可变字符用于完成字符串的拼接操作。
 
    StringBuffer 线程安全
 
