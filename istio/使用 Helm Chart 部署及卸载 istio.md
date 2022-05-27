@@ -185,3 +185,4 @@ kubectl delete ns istio-system
 ### 总结
 
 上述步骤使用的是 istio 官方提供的默认配置，如果你想要自定配置，可以阅读 values.yaml 文件后，通过 `--set` 的方式修改，或者直接修改 chart。
+
