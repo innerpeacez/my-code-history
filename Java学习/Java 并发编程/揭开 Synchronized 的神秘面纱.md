@@ -1,3 +1,30 @@
+## Synchroniezed
+
+```java
+class X {
+  // 修饰非静态方法
+  synchronized void foo() {
+    // 临界区
+  }
+  // 修饰静态方法
+  synchronized static void bar() {
+    // 临界区
+  }
+  // 修饰代码块
+  Object obj = new Object()；
+  void baz() {
+    synchronized(obj) {
+      // 临界区
+    }
+  }
+}  
+```
+
+Java的一条隐式规则：
+
+- 当修 synchronized 饰静态方法的时候，锁定的是当前类的Class对象，在上面的例子中就是Class X
+- 当修 synchronized 饰非静态方法的时候，锁定的是当前实例对象 this
+
 #### 同步代码块
 
 ```java
